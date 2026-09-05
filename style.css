@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #93c5fd
+    );
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    color: #1e3a8a;
+    font-size: 26px;
+    margin-bottom: 50px;
+}
+
+.envelope-container {
+    width: 400px;
+    height: 280px;
+    margin: 0 auto;
+    cursor: pointer;
+    perspective: 1200px;
+}
+
+.envelope {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #eff6ff;
+    border-radius: 10px;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.18);
+    z-index: 1;
+}
+
+.card-wrapper {
+    position: absolute;
+    width: 360px;
+    height: 470px;
+    left: 20px;
+    bottom: 10px;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 2;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.envelope-container.open .card-wrapper {
+    visibility: visible;
+    pointer-events: auto;
+    animation:
+        card-slide-out
+        3.5s
+        ease-in-out
+        forwards;
+}
+
+@keyframes card-slide-out {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-360px);
+    }
+    100% {
+        transform: translateY(65px);
+    }
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.card-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.20);
+}
+
+.message {
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.heart {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.message h2 {
+    color: #1d4ed8;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.dear {
+    color: #2563eb;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.message p {
+    color: #1e40af;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.message .love {
+    color: #2563eb;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card-front {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        145deg,
+        #1d4ed8,
+        #60a5fa
+    );
+    border-radius: 25px;
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25);
+    transform-origin: left center;
+    transition:
+        transform 1.2s ease;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+
+.front-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.letters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.word {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.letters span {
+    display: inline-block;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1;
+    transform: scale(1);
+    transform-origin: center;
+    will-change: transform;
+}
+
+.letters.animate .word span {
+    animation:
+        pama-pop
+        0.9s
+        ease-in-out
+        forwards;
+}
+
+/* HAPPY */
+
+.letters.animate .word:nth-child(1) span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.letters.animate .word:nth-child(1) span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.letters.animate .word:nth-child(1) span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.letters.animate .word:nth-child(1) span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.letters.animate .word:nth-child(1) span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+
+/* PAMA'S */
+
+.letters.animate .word:nth-child(2) span:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+.letters.animate .word:nth-child(2) span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.letters.animate .word:nth-child(2) span:nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+.letters.animate .word:nth-child(2) span:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.letters.animate .word:nth-child(2) span:nth-child(5) {
+    animation-delay: 0.45s;
+}
+
+.letters.animate .word:nth-child(2) span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+
+/* DAY */
+
+.letters.animate .word:nth-child(3) span:nth-child(1) {
+    animation-delay: 0.55s;
+}
+
+.letters.animate .word:nth-child(3) span:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.letters.animate .word:nth-child(3) span:nth-child(3) {
+    animation-delay: 0.65s;
+}
+
+
+@keyframes pama-pop {
+    0% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1.45);
+    }
+    60% {
+        transform: scale(1.45);
+    }
+    80% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.front-content > p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.tap-card {
+    margin-top: 30px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    background:
+        rgba(255, 255, 255, 0.2);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+.card.open .card-front {
+    transform: rotateY(-180deg);
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #bfdbfe;
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+    border-radius: 10px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 30px;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+
+.envelope-heart {
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+
+.envelope-front p {
+    font-size: 16px;
+}
+
+.envelope-container.card-coming-down
+.envelope-front {
+    z-index: 1;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #93c5fd;
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 55%
+        );
+    transform-origin: top center;
+    transition:
+        transform 0.9s
+        cubic-bezier(
+            0.4,
+            0,
+            0.2,
+            1
+        );
+    z-index: 5;
+}
+
+.envelope-container.open
+.envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.instructions {
+    margin-top: 35px;
+    color: #1e3a8a;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 21px;
+        margin-bottom: 40px;
+    }
+
+    .envelope-container {
+        width: 90vw;
+        max-width: 360px;
+        height: 250px;
+    }
+
+    .card-wrapper {
+        width:
+            calc(100% - 30px);
+        height: 420px;
+        left: 15px;
+    }
+
+    .envelope-container.open
+    .card-wrapper {
+        animation:
+            card-slide-out-mobile
+            3.5s
+            ease-in-out
+            forwards;
+    }
+
+    @keyframes card-slide-out-mobile {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-290px);
+        }
+        100% {
+            transform: translateY(65px);
+        }
+    }
+
+    .front-content {
+        padding: 25px;
+    }
+
+    .letters {
+        gap: 6px;
+        margin-bottom: 15px;
+    }
+
+    .word {
+        gap: 1px;
+    }
+
+    .letters span {
+        font-size: 36px;
+    }
+
+    .front-content > p {
+        font-size: 16px;
+    }
+
+    .tap-card {
+        margin-top: 22px;
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .message {
+        padding: 25px;
+    }
+
+    .message h2 {
+        font-size: 23px;
+    }
+
+    .message p {
+        font-size: 14px;
+    }
+
+    .envelope-heart {
+        font-size: 28px;
+    }
+
+    .envelope-front p {
+        font-size: 14px;
+    }
+}
