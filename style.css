@@ -449,13 +449,13 @@ body {
     }
 
     .front-content > p {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .tap-card {
         margin-top: 22px;
         padding: 10px 20px;
-        font-size: 13px;
+        font-size: 18px;
     }
 
     .message {
@@ -467,7 +467,7 @@ body {
     }
 
     .message p {
-        font-size: 14px;
+        font-size: 19px;
     }
 
     .envelope-heart {
@@ -475,6 +475,6 @@ body {
     }
 
     .envelope-front p {
-        font-size: 14px;
+        font-size: 20px;
     }
 }
