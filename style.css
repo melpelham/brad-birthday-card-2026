@@ -10,11 +10,9 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-    background: linear-gradient(
-        135deg,
-        #dbeafe,
-        #93c5fd
-    );
+    background: linear-gradient(135deg,
+            #dbeafe,
+            #93c5fd);
     overflow: hidden;
 }
 
@@ -46,12 +44,17 @@ body {
 .envelope-back {
     position: absolute;
     inset: 0;
-    background: #eff6ff;
+    background: #e8f1ff;
     border-radius: 10px;
     box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.18);
+        0 20px 40px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
+
+
+/* =========================
+   CARD
+========================= */
 
 .card-wrapper {
     position: absolute;
@@ -69,24 +72,30 @@ body {
 .envelope-container.open .card-wrapper {
     visibility: visible;
     pointer-events: auto;
-    animation:
-        card-slide-out
-        3.5s
-        ease-in-out
-        forwards;
+    z-index: 2;
+    animation: card-slide-out 3.5s ease-in-out forwards;
 }
 
+
 @keyframes card-slide-out {
+
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-360px);
     }
+
     100% {
         transform: translateY(65px);
     }
 }
+
+
+/* =========================
+   CARD
+========================= */
 
 .card {
     width: 100%;
@@ -99,61 +108,68 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #ffffff;
+    background: white;
     border-radius: 25px;
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.20);
+        0 18px 45px rgba(0, 0, 0, 0.22);
+    z-index: 1;
 }
 
 .message {
+    width: 100%;
     height: 100%;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
 .heart {
-    font-size: 50px;
-    margin-bottom: 15px;
+    font-size: 55px;
+    margin-bottom: 20px;
 }
 
 .message h2 {
     color: #1d4ed8;
     font-size: 28px;
+    line-height: 1.25;
     margin-bottom: 25px;
 }
 
 .dear {
     color: #2563eb;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .message p {
     color: #1e40af;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .message .love {
     color: #2563eb;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
     margin-top: 10px;
 }
 
+
+/* =========================
+   FRONT OF CARD
+========================= */
+
 .card-front {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        145deg,
-        #1d4ed8,
-        #60a5fa
-    );
+    background: linear-gradient(145deg,
+            #1d4ed8,
+            #60a5fa);
     border-radius: 25px;
     box-shadow:
         0 18px 45px rgba(0, 0, 0, 0.25);
@@ -176,118 +192,60 @@ body {
     padding: 30px;
 }
 
-.letters {
+.birthday-words {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 .word {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 3px;
 }
 
-.letters span {
+.word span {
     display: inline-block;
-    font-size: 52px;
-    font-weight: 800;
+    font-size: 50px;
+    font-weight: 900;
     line-height: 1;
     transform: scale(1);
     transform-origin: center;
     will-change: transform;
 }
 
-.letters.animate .word span {
+.bradaweena span {
+    font-size: 34px;
+}
+
+
+.birthday-words.animate .word span {
     animation:
-        pama-pop
-        0.9s
-        ease-in-out
-        forwards;
+        birthday-pop 0.8s ease-in-out forwards;
 }
 
-/* HAPPY */
+@keyframes birthday-pop {
 
-.letters.animate .word:nth-child(1) span:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.letters.animate .word:nth-child(1) span:nth-child(2) {
-    animation-delay: 0.05s;
-}
-
-.letters.animate .word:nth-child(1) span:nth-child(3) {
-    animation-delay: 0.1s;
-}
-
-.letters.animate .word:nth-child(1) span:nth-child(4) {
-    animation-delay: 0.15s;
-}
-
-.letters.animate .word:nth-child(1) span:nth-child(5) {
-    animation-delay: 0.2s;
-}
-
-
-/* PAMA'S */
-
-.letters.animate .word:nth-child(2) span:nth-child(1) {
-    animation-delay: 0.25s;
-}
-
-.letters.animate .word:nth-child(2) span:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.letters.animate .word:nth-child(2) span:nth-child(3) {
-    animation-delay: 0.35s;
-}
-
-.letters.animate .word:nth-child(2) span:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.letters.animate .word:nth-child(2) span:nth-child(5) {
-    animation-delay: 0.45s;
-}
-
-.letters.animate .word:nth-child(2) span:nth-child(6) {
-    animation-delay: 0.5s;
-}
-
-
-/* DAY */
-
-.letters.animate .word:nth-child(3) span:nth-child(1) {
-    animation-delay: 0.55s;
-}
-
-.letters.animate .word:nth-child(3) span:nth-child(2) {
-    animation-delay: 0.6s;
-}
-
-.letters.animate .word:nth-child(3) span:nth-child(3) {
-    animation-delay: 0.65s;
-}
-
-
-@keyframes pama-pop {
     0% {
         transform: scale(1);
     }
+
     35% {
         transform: scale(1.45);
     }
+
     60% {
         transform: scale(1.45);
     }
+
     80% {
         transform: scale(0.95);
     }
+
     100% {
         transform: scale(1);
     }
@@ -299,33 +257,39 @@ body {
 }
 
 .tap-card {
-    margin-top: 30px;
+    margin-top: 28px;
     padding: 12px 24px;
     border-radius: 30px;
     background:
         rgba(255, 255, 255, 0.2);
     border:
-        1px solid
-        rgba(255, 255, 255, 0.5);
+        1px solid rgba(255, 255, 255, 0.5);
     font-size: 14px;
 }
+
+
+/* =========================
+   OPEN CARD
+========================= */
 
 .card.open .card-front {
     transform: rotateY(-180deg);
 }
 
+
+/* =========================
+   ENVELOPE FRONT
+========================= */
+
 .envelope-front {
     position: absolute;
     inset: 0;
     background: #bfdbfe;
-    clip-path:
-        polygon(
-            0 0,
+    clip-path: polygon(0 0,
             50% 55%,
             100% 0,
             100% 100%,
-            0 100%
-        );
+            0 100%);
     border-radius: 10px;
     z-index: 4;
     display: flex;
@@ -337,57 +301,116 @@ body {
     font-weight: bold;
 }
 
-
 .envelope-heart {
     font-size: 35px;
     margin-bottom: 5px;
 }
 
-
 .envelope-front p {
-    font-size: 25px;
+    font-size: 16px;
 }
 
-.envelope-container.card-coming-down
-.envelope-front {
-    z-index: 1;
-}
+
+/* =========================
+   FLAP
+========================= */
 
 .envelope-flap {
     position: absolute;
     inset: 0;
     background: #93c5fd;
-    clip-path:
-        polygon(
-            0 0,
+    clip-path: polygon(0 0,
             100% 0,
-            50% 55%
-        );
+            50% 55%);
     transform-origin: top center;
     transition:
-        transform 0.9s
-        cubic-bezier(
-            0.4,
-            0,
-            0.2,
-            1
-        );
+        transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 5;
 }
 
-.envelope-container.open
-.envelope-flap {
+.envelope-container.open .envelope-flap {
     transform: rotateX(180deg);
     z-index: 1;
 }
 
+
+/* =========================
+   INSTRUCTIONS
+========================= */
+
 .instructions {
     margin-top: 35px;
     color: #1e3a8a;
-    font-size: 25px;
+    font-size: 15px;
 }
 
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
+
+    border-radius: 2px;
+
+    animation:
+        confetti-fall
+        3s
+        linear
+        forwards;
+
+    transform: rotate(0deg);
+}
+
+@keyframes confetti-fall {
+
+    0% {
+        transform:
+            translateY(-20px)
+            translateX(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(var(--drift))
+            rotate(360deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(
+                calc(var(--drift) * 1.5)
+            )
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
     body {
         padding: 20px;
     }
@@ -404,14 +427,12 @@ body {
     }
 
     .card-wrapper {
-        width:
-            calc(100% - 30px);
+        width: calc(100% - 30px);
         height: 420px;
         left: 15px;
     }
 
-    .envelope-container.open
-    .card-wrapper {
+    .envelope-container.open .card-wrapper {
         animation:
             card-slide-out-mobile
             3.5s
@@ -420,61 +441,91 @@ body {
     }
 
     @keyframes card-slide-out-mobile {
+
         0% {
             transform: translateY(0);
         }
+
         50% {
             transform: translateY(-290px);
         }
+
         100% {
             transform: translateY(65px);
         }
     }
 
     .front-content {
-        padding: 25px;
+        padding: 20px;
     }
 
-    .letters {
-        gap: 6px;
-        margin-bottom: 15px;
+    .birthday-words {
+        gap: 8px;
+        margin-bottom: 18px;
     }
 
     .word {
-        gap: 1px;
+        gap: 2px;
     }
 
-    .letters span {
-        font-size: 36px;
+    .word span {
+        font-size: 42px;
+    }
+
+    .bradaweena span {
+        font-size: 27px;
     }
 
     .front-content > p {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .tap-card {
         margin-top: 22px;
-        padding: 10px 20px;
-        font-size: 18px;
+        padding: 11px 20px;
+        font-size: 15px;
     }
 
     .message {
-        padding: 25px;
+        padding: 25px 20px;
+    }
+
+    .heart {
+        font-size: 55px;
+        margin-bottom: 18px;
     }
 
     .message h2 {
-        font-size: 23px;
+        font-size: 26px;
+        margin-bottom: 22px;
+    }
+
+    .dear {
+        font-size: 21px;
+        margin-bottom: 18px;
     }
 
     .message p {
-        font-size: 19px;
+        font-size: 20px;
+        line-height: 1.65;
+        margin-bottom: 18px;
+    }
+
+    .message .love {
+        font-size: 20px;
+        line-height: 1.5;
     }
 
     .envelope-heart {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .envelope-front p {
-        font-size: 20px;
+        font-size: 16px;
+    }
+
+    .instructions {
+        margin-top: 30px;
+        font-size: 17px;
     }
 }
