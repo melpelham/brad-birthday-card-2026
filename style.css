@@ -51,11 +51,6 @@ body {
     z-index: 1;
 }
 
-
-/* =========================
-   CARD
-========================= */
-
 .card-wrapper {
     position: absolute;
     width: 360px;
@@ -82,20 +77,13 @@ body {
     0% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-360px);
     }
-
     100% {
         transform: translateY(65px);
     }
 }
-
-
-/* =========================
-   CARD
-========================= */
 
 .card {
     width: 100%;
@@ -159,11 +147,6 @@ body {
     margin-top: 10px;
 }
 
-
-/* =========================
-   FRONT OF CARD
-========================= */
-
 .card-front {
     position: absolute;
     inset: 0;
@@ -222,7 +205,6 @@ body {
     font-size: 34px;
 }
 
-
 .birthday-words.animate .word span {
     animation:
         birthday-pop 0.8s ease-in-out forwards;
@@ -233,19 +215,15 @@ body {
     0% {
         transform: scale(1);
     }
-
     35% {
         transform: scale(1.45);
     }
-
     60% {
         transform: scale(1.45);
     }
-
     80% {
         transform: scale(0.95);
     }
-
     100% {
         transform: scale(1);
     }
@@ -267,19 +245,9 @@ body {
     font-size: 14px;
 }
 
-
-/* =========================
-   OPEN CARD
-========================= */
-
 .card.open .card-front {
     transform: rotateY(-180deg);
 }
-
-
-/* =========================
-   ENVELOPE FRONT
-========================= */
 
 .envelope-front {
     position: absolute;
@@ -310,11 +278,6 @@ body {
     font-size: 16px;
 }
 
-
-/* =========================
-   FLAP
-========================= */
-
 .envelope-flap {
     position: absolute;
     inset: 0;
@@ -333,21 +296,11 @@ body {
     z-index: 1;
 }
 
-
-/* =========================
-   INSTRUCTIONS
-========================= */
-
 .instructions {
     margin-top: 35px;
     color: #1e3a8a;
     font-size: 15px;
 }
-
-
-/* =========================
-   CONFETTI
-========================= */
 
 .confetti-container {
     position: fixed;
@@ -404,11 +357,6 @@ body {
     }
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 600px) {
 
     body {
@@ -445,11 +393,9 @@ body {
         0% {
             transform: translateY(0);
         }
-
         50% {
             transform: translateY(-290px);
         }
-
         100% {
             transform: translateY(65px);
         }
@@ -506,13 +452,13 @@ body {
     }
 
     .message p {
-        font-size: 20px;
+        font-size: 12px;
         line-height: 1.65;
         margin-bottom: 18px;
     }
 
     .message .love {
-        font-size: 20px;
+        font-size: 17px;
         line-height: 1.5;
     }
 
